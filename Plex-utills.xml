@@ -42,6 +42,11 @@
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
+    <Volume>
+      <HostDir/>
+      <ContainerDir>/logs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
   </Data>
   <Environment>
     <Variable>
@@ -65,6 +70,7 @@
   <Config Name="Config File" Target="/config" Default="/mnt/user/appdata/plex-utills" Mode="rw" Description="Location of your config file" Type="Path" Display="always" Required="false" Mask="false">/mnt/appdata/plex-utills/</Config>
   <Config Name="Timezone" Target="TZ" Default="europe/london" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="true" Mask="false">europe/london</Config>
   <Config Name="Webui Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always" Required="true" Mask="false">5000</Config>
+  <Config Name="Logs" Target="/logs" Default="/mnt/appdata/plex-utills/logs" Mode="rw" Description="Container Path: /logs" Type="Path" Display="always" Required="false" Mask="false"/>
   <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
   <Config Name="PGID" Target="PGID" Default="1000" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
 </Container>
