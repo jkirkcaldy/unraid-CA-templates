@@ -5,25 +5,31 @@
   <Registry>https://hub.docker.com/r/jkirkcaldy/plex-utills/</Registry>
   <Network>bridge</Network>
   <MyIP/>
-  <Shell>sh</Shell>
+  <Shell>bash</Shell>
   <Privileged>false</Privileged>
   <Support>https://hub.docker.com/r/jkirkcaldy/plex-utills/</Support>
   <Project>https://github.com/jkirkcaldy/plex-utills</Project>
   <Overview>A utility to help manage your library. Options include adding 4k banners and HDR banners to your poster art automactically, auto collections for Disney and Pixar Studios and hiding/auto optimising media files where there is only a 4k version available. </Overview>
   <Category>Tools: MediaApp:Other Status:Beta</Category>
-  <WebUI/>
+  <WebUI>http://[ip-address]:5000</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/jkirkcaldy/plex-utills/master/img/logo.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1629806082</DateInstalled>
+  <DateInstalled>1634217862</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>A utility to help manage your library. Options include adding 4k banners and HDR banners to your poster art automactically, auto collections for Disney and Pixar Studios and hiding/auto optimising media files where there is only a 4k version available. </Description>
   <Networking>
     <Mode>bridge</Mode>
-    <Publish/>
+    <Publish>
+      <Port>
+        <HostPort>5000</HostPort>
+        <ContainerPort>5000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
   </Networking>
   <Data>
     <Volume>
@@ -43,9 +49,22 @@
       <Name>TZ</Name>
       <Mode/>
     </Variable>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
   </Environment>
   <Labels/>
   <Config Name="Plex Library" Target="/films" Default="/mnt/user/plex-media" Mode="rw" Description="Location of your Plex media files.&#13;&#10;&#13;&#10;Needed if you want to create backup posters" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Plex/</Config>
-  <Config Name="Config File" Target="/config" Default="/mnt/user/appdata/plex-utills" Mode="rw,slave" Description="Location of your config file" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/plex-utills/</Config>
+  <Config Name="Config File" Target="/config" Default="/mnt/user/appdata/plex-utills" Mode="rw" Description="Location of your config file" Type="Path" Display="always" Required="false" Mask="false">/mnt/disks/Docker_SSD/plex-utills/</Config>
   <Config Name="Timezone" Target="TZ" Default="europe/london" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="true" Mask="false">europe/london</Config>
+  <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+  <Config Name="PGID" Target="PGID" Default="1000" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+  <Config Name="Webui Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always" Required="true" Mask="false">5000</Config>
 </Container>
