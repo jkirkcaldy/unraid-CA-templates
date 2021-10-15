@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>plex-utills</Name>
-  <Repository>jkirkcaldy/plex-utills:dev</Repository>
+  <Repository>jkirkcaldy/plex-utills</Repository>
   <Registry>https://hub.docker.com/r/jkirkcaldy/plex-utills/</Registry>
   <Network>bridge</Network>
   <MyIP/>
