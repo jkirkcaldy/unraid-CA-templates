@@ -11,13 +11,13 @@
   <Project>https://github.com/jkirkcaldy/plex-utills</Project>
   <Overview>A utility to help manage your library. Options include adding 4k banners and HDR banners to your poster art automactically, auto collections for Disney and Pixar Studios and hiding/auto optimising media files where there is only a 4k version available. </Overview>
   <Category>Tools: MediaApp:Other Status:Beta</Category>
-  <WebUI>http://[IP]:[PORT:5000]</WebUI>
-  <TemplateURL/>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/jkirkcaldy/unraid-CA-templates/main/Plex-utills.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/jkirkcaldy/plex-utills/master/app/img/logo.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
-  <DateInstalled>1634308237</DateInstalled>
+  <DateInstalled>1636544762</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>A utility to help manage your library. Options include adding 4k banners and HDR banners to your poster art automactically, auto collections for Disney and Pixar Studios and hiding/auto optimising media files where there is only a 4k version available. </Description>
@@ -25,8 +25,8 @@
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort>5000</HostPort>
-        <ContainerPort>5000</ContainerPort>
+        <HostPort>80</HostPort>
+        <ContainerPort>80</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>
@@ -43,24 +43,24 @@
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/plex-utills/logs</HostDir>
+      <HostDir>/mnt/disks/Docker_SSD/plex-utills/logs</HostDir>
       <ContainerDir>/logs</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
   <Environment>
     <Variable>
-      <Value>europe/london</Value>
+      <Value>Europe/London</Value>
       <Name>TZ</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>1000</Value>
+      <Value>99</Value>
       <Name>PUID</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>1000</Value>
+      <Value>100</Value>
       <Name>PGID</Name>
       <Mode/>
     </Variable>
@@ -68,9 +68,9 @@
   <Labels/>
   <Config Name="Plex Library" Target="/films" Default="/mnt/user/plex-media" Mode="rw" Description="Location of your Plex media files.&#13;&#10;&#13;&#10;Needed if you want to create backup posters" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Plex/</Config>
   <Config Name="Config File" Target="/config" Default="/mnt/user/appdata/plex-utills" Mode="rw" Description="Location of your config file" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/plex-utills/</Config>
-  <Config Name="Timezone" Target="TZ" Default="europe/london" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="true" Mask="false">europe/london</Config>
-  <Config Name="Webui Port" Target="5000" Default="5000" Mode="tcp" Description="Container Port: 5000" Type="Port" Display="always" Required="true" Mask="false">5000</Config>
-  <Config Name="Logs" Target="/logs" Default="/mnt/appdata/plex-utills/logs" Mode="rw" Description="Container Path: /logs" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/plex-utills/logs</Config>
-  <Config Name="PUID" Target="PUID" Default="1000" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
-  <Config Name="PGID" Target="PGID" Default="1000" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="true" Mask="false">1000</Config>
+  <Config Name="Timezone" Target="TZ" Default="europe/london" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="true" Mask="false">Europe/London</Config>
+  <Config Name="Webui Port" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">80</Config>
+  <Config Name="Logs" Target="/logs" Default="/mnt/appdata/plex-utills/logs" Mode="rw" Description="Container Path: /logs" Type="Path" Display="always" Required="false" Mask="false">/mnt/disks/Docker_SSD/plex-utills/logs</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="true" Mask="false">100</Config>
 </Container>
