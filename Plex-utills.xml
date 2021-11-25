@@ -50,11 +50,6 @@
   </Data>
   <Environment>
     <Variable>
-      <Value>Europe/London</Value>
-      <Name>TZ</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
       <Value>99</Value>
       <Name>PUID</Name>
       <Mode/>
@@ -68,7 +63,6 @@
   <Labels/>
   <Config Name="Plex Library" Target="/films" Default="/mnt/user/plex-media" Mode="rw" Description="Location of your Plex media files.&#13;&#10;&#13;&#10;Needed if you want to create backup posters" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Plex/</Config>
   <Config Name="Config File" Target="/config" Default="/mnt/user/appdata/plex-utills" Mode="rw" Description="Location of your config file" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/plex-utills/</Config>
-  <Config Name="Timezone" Target="TZ" Default="europe/london" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="true" Mask="false">Europe/London</Config>
   <Config Name="Webui Port" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">80</Config>
   <Config Name="Logs" Target="/logs" Default="/mnt/appdata/plex-utills/logs" Mode="rw" Description="Container Path: /logs" Type="Path" Display="always" Required="false" Mask="false">/mnt/disks/Docker_SSD/plex-utills/logs</Config>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="true" Mask="false">99</Config>
