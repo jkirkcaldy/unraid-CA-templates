@@ -13,14 +13,14 @@
   <Category>Tools: MediaApp:Other Status:Beta</Category>
   <WebUI>http://[IP]:[PORT:80]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/jkirkcaldy/unraid-CA-templates/main/Plex-utills.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/jkirkcaldy/plex-utills/master/app/img/logo.png</Icon>
+  <Icon>https://github.com/jkirkcaldy/plex-utills/blob/7cf707f3aee6aa865a811b88d9ced865626bf7bd/app/img/plex-utills_square.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
   <DateInstalled>1636544762</DateInstalled>
   <DonateText/>
   <DonateLink/>
-  <Description>A utility to help manage your library. Options include adding 4k banners and HDR banners to your poster art automactically, auto collections for Disney and Pixar Studios and hiding/auto optimising media files where there is only a 4k version available. </Description>
+  <Description>A utility to help manage your library. Options include adding 4k banners and HDR banners to your poster art automactically, auto collections for Disney and Pixar Studios, Marvel cinematic Universe and hiding/auto optimising media files where there is only a 4k version available. </Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
@@ -35,7 +35,7 @@
     <Volume>
       <HostDir>/mnt/user/Plex/</HostDir>
       <ContainerDir>/films</ContainerDir>
-      <Mode>rw</Mode>
+      <Mode>ro</Mode>
     </Volume>
     <Volume>
       <HostDir>/mnt/user/appdata/plex-utills/</HostDir>
@@ -43,7 +43,7 @@
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/disks/Docker_SSD/plex-utills/logs</HostDir>
+      <HostDir>/mnt/user/appdata/plex-utills/logs</HostDir>
       <ContainerDir>/logs</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -61,7 +61,7 @@
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Plex Library" Target="/films" Default="/mnt/user/plex-media" Mode="rw" Description="Location of your Plex media files.&#13;&#10;&#13;&#10;Needed if you want to create backup posters" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Plex/</Config>
+  <Config Name="Plex Library" Target="/films" Default="/mnt/user/plex-media" Mode="ro" Description="Location of your Plex media files.&#13;&#10;&#13;&#10;Needed if you want to create backup posters" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/Plex/</Config>
   <Config Name="Config File" Target="/config" Default="/mnt/user/appdata/plex-utills" Mode="rw" Description="Location of your config file" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/plex-utills/</Config>
   <Config Name="Webui Port" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">80</Config>
   <Config Name="Logs" Target="/logs" Default="/mnt/appdata/plex-utills/logs" Mode="rw" Description="Container Path: /logs" Type="Path" Display="always" Required="false" Mask="false">/mnt/disks/Docker_SSD/plex-utills/logs</Config>
